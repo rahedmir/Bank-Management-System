@@ -1,2 +1,2 @@
 # Bank Management System
-Simple Bank Management System in C++
+<h2>Simple Bank Management System in C++</h2>
