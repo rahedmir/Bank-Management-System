@@ -23,6 +23,7 @@ class bank
 
 void bank::open_account()
 {
+	cout<<endl;
 	cout<<"Enter your full name "<<endl;
 	cin.clear(); 
 	getline(cin,name);
@@ -41,7 +42,7 @@ void bank::open_account()
 		getline(cin,address); //Avoid blank entry (address)
 	}
 	
-	cout<<"What type of account do you want to open?  Saving(S) or Current(C)..."<<endl;
+	cout<<"What type of account do you want to open?  Saving(S) or Current(C)... "<<endl;
     cin.clear(); 
 	cin>>account_type;
 	
@@ -49,11 +50,11 @@ void bank::open_account()
 	{
 		cout<<"invalid input!!!... Press 'S' or 'C' key "<<endl; //avoid invalid account selection
 		cin.clear(); 
-		cin.ignore(100, '\n'); ////Stop infinite loop for invalid input!
+		cin.ignore(100, '\n'); //Stop infinite loop for invalid input!
 		cin>>account_type;
 	}
 	
-	cout<<"Enter the amount for the first deposit "<<endl;
+	cout<<"Enter the amount for the first deposit (INR.) "<<endl;
 	cin.clear(); 
 	cin>>balance;
 	
@@ -65,14 +66,14 @@ void bank::open_account()
         cin>>balance;	
 	}
 	
-	cout<<"Your account is created successfully!"<<endl;	
+	cout<<"Your account is created successfully! "<<endl;	
 }
 
 void bank::deposit_money()
 {
 	float deposit;
 	
-	cout<<"Enter the amount you want to deposit "<<endl;
+	cout<<"Enter the amount you want to deposit (INR.) "<<endl;
 	cin>>deposit;
 	
 	while(cin.fail() || deposit<0)
@@ -85,14 +86,14 @@ void bank::deposit_money()
 	
 	balance = balance + deposit;
 	
-	cout<<deposit<<" is successfully deposited into your account "<<endl;
+	cout<<"INR. "<<deposit<<" is successfully deposited into your account "<<endl;
 }
 
 void bank::withdraw_money()
 {
 	float withdraw;
 	
-	cout<<"Enter the amount you want to withdraw "<<endl;
+	cout<<"Enter the amount you want to withdraw (INR.) "<<endl;
 	cin>>withdraw;
 	
 		while(cin.fail() || withdraw<0)
@@ -111,7 +112,7 @@ void bank::withdraw_money()
 	{
 		balance = balance - withdraw;
 		
-		cout<<withdraw<<" is successfully withdrawn from your account "<<endl;
+		cout<<"INR. "<<withdraw<<" is successfully withdrawn from your account "<<endl;
 	}
 	
 	
@@ -135,7 +136,7 @@ void bank::display_account()
 		 	cout<<"Invalid account!!! "<<endl;
 	}
 
-	cout<<"Your current balance : "<<balance<<endl;
+	cout<<"Your current balance : "<<balance<<" INR."<<endl;
 }
 
 int main()
@@ -176,7 +177,7 @@ int main()
 			exit(3);
 		
 			default:
-				cout<<"Invalid input!!!..."<<endl;
+				cout<<"Invalid input!!!... "<<endl;
 				
 		}
 		
