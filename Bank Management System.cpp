@@ -21,6 +21,11 @@ class bank
 		
 };
 
+void invalid_input()
+{
+	cout<<"invalid input!!!... Please enter a positive number "<<endl; //Only allow positive numbers to input
+}
+
 void bank::open_account()
 {
 	cout<<endl;
@@ -60,7 +65,7 @@ void bank::open_account()
 	
 	while(cin.fail() || balance<0)
 	{
-		cout<<"invalid input!!!... Please enter a positive number "<<endl; //Only allow positive numbers to input
+		invalid_input();
 		cin.clear(); 
         cin.ignore(100, '\n');
         cin>>balance;	
@@ -78,7 +83,7 @@ void bank::deposit_money()
 	
 	while(cin.fail() || deposit<0)
 	{
-		cout<<"invalid input!!!... Please enter a positive number "<<endl; //Only allow positive numbers to input
+		invalid_input();
 		cin.clear(); 
         cin.ignore(100, '\n');
 		cin>>deposit;	
@@ -96,9 +101,9 @@ void bank::withdraw_money()
 	cout<<"Enter the amount you want to withdraw (INR.) "<<endl;
 	cin>>withdraw;
 	
-		while(cin.fail() || withdraw<0)
+	while(cin.fail() || withdraw<0)
 	{
-		cout<<"invalid input!!!... Please enter a positive number "<<endl; //Only allow positive numbers to input
+		invalid_input();
 		cin.clear(); 
         cin.ignore(100, '\n');
 		cin>>withdraw;			
@@ -123,11 +128,11 @@ void bank::display_account()
 	std::cout<<"Your name : "<<name<<endl;
 	cout<<"Your address : "<<address<<endl;
 	
-	if(account_type=='c'|| account_type=='C')
+	if(account_type=='c'|| account_type=='C') //Check your account type
 	{
 			cout<<"Type of your account : Current "<<endl;
 	}
-	else if(account_type=='s' || account_type=='S')  //Check your account type
+	else if(account_type=='s' || account_type=='S')  
 	{
 			cout<<"Type of your account : Saving "<<endl;
 	}
@@ -161,8 +166,8 @@ int main()
 		
 		
 		cin>>choice;
-		cin.clear(); //Stop infinite loop for invalid input!
-		cin.ignore(100, '\n');
+		cin.clear(); 
+		cin.ignore(100, '\n'); //Stop infinite loop for invalid input!
 		
 		switch(choice)
 		{
